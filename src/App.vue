@@ -69,7 +69,7 @@ export default {
 
     methods: {
         addNewTodo() {
-            axios.get('http://127.0.0.1:8000/api/addLink?link=' + this.full)
+            axios.get('http://127.0.0.1:8000/api/addLink?link=https://' + this.full)
                 .then(response => {
                     this.short = response.data.link
                 })
