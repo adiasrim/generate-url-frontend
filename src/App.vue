@@ -36,6 +36,7 @@
                                                 v-model="full"
                                             >
                                             <button
+                                                @click="copyText"
                                                 class="border border-indigo-600 bg-black text-white rounded-lg py-3 font-semibold"
                                                 v-text=" 'Generate new link' "
                                             />
@@ -73,6 +74,9 @@ export default {
                 .then(response => {
                     this.short = response.data.link
                 })
+        },
+        copyText() {
+            navigator.clipboard.writeText(this.short)
         }
     },
     mounted() {
